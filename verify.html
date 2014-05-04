@@ -1,9 +1,174 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="no-js" lang="en">
 <head>
-    <title></title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Validate Wallet | Verify</title>
+    <link rel="stylesheet" href="css/foundation.css"/>
+    <link rel="stylesheet" href="css/vw.css"/>
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
 </head>
 <body>
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+            <h1>
+                <a href="#">
+                    Validate Wallet
+                </a>
+            </h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+    </ul>
 
+    <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li class="divider"></li>
+            <li>
+                <a href="/">Verify</a>
+            </li>
+            <li class="divider"></li>
+            <li><a href="/verify_pem.htm">Verify PEM</a></li>
+            <li class="divider"></li>
+            <li>
+                <a href="#">Wallets</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="#">Terms</a>
+            </li>
+        </ul>
+    </section>
+</nav>
+
+<!-- End Top Bar -->
+
+
+<!-- Main Page Content and Sidebar -->
+
+<div class="row">
+
+    <!-- Contact Details -->
+    <div id="vw-pane" class="large-9 columns">
+
+        <div class="panel">
+            <h3>Verify Address by Message
+                <small>(Bitcoin Signature)</small>
+            </h3>
+        </div>
+
+        <p>We'd love to hear from you. You can either reach out to us as a whole and one of our awesome
+            team members will get back to you, or if you have a specific question reach out to one of
+            our staff. We love getting email all day <em>all day</em>.</p>
+
+        <div class="section-container tabs" data-section>
+            <section class="section">
+                <h5 class="title"><a href="#panel1">Contact Our Company</a></h5>
+
+                <div class="content" data-slug="panel1">
+                    <form id="verify-form" data-abide>
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <label>Address
+                                    <small>required</small>
+                                    <input id="vw-input-addr" type="text" placeholder="Bitcoin Address" required>
+                                </label>
+                                <small class="error">Bitcoin Address is required.</small>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <label>Message
+                                    <small>required</small>
+                                    <textarea id="vw-input-msg" placeholder="Signed Message" required></textarea>
+                                </label>
+                                <small class="error">Message text is required.</small>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <label>Signature
+                                    <small>required</small>
+                                    <input id="vw-input-sign" type="text" placeholder="Message Signature" required>
+                                </label>
+                                <small class="error">Signature is required to be checked.</small>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="vw-alert-success" class="alert-box success large-12 columns" style="display: none;"
+                                 data-alert="">
+                                <span id="vw-success">Success! Message verified to be from the address.</span>
+                                <a class="close" href="#">×</a>
+                            </div>
+                            <div id="vw-alert-failure" class="alert-box alert large-12 columns" style="display: none;"
+                                 data-alert="">
+                                <span id="vw-failure">Error! Message failed to verify.</span>
+                                <a class="close" href="#">×</a>
+                            </div>
+                            <div id="vw-alert-badaddr" class="alert-box warning large-12 columns" style="display: none;"
+                                 data-alert="">
+                                <span id="vw-badaddr">Error! Invalid Bitcoin Address.</span>
+                                <a class="close" href="#">×</a>
+                            </div>
+                        </div>
+                        <div id="vw-alert">
+                        </div>
+                        <a href="#" id="vw-btn-verify-a-m-s" class="button expand">Verify</a>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- End Contact Details -->
+
+    <!-- Sidebar -->
+
+
+    <div class="large-3 columns">
+        <div class="qrcode panel callout radius" id="vw-qrcode">
+            <div class="panel">Address QR Code</div>
+        </div>
+    </div>
+    <!-- End Sidebar -->
+</div>
+
+<!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr/>
+        <div class="row">
+            <div class="large-6 columns">
+                <p> Validate Wallet Service.</p>
+            </div>
+            <div class="large-6 columns">
+                <ul class="inline-list right">
+                    <li><a href="#">Verify</a></li>
+                    <li><a href="#">Wallets</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- End Footer -->
+
+<script>
+    $(document).foundation();
+</script>
+
+<script src="js/bitcoinjs-min.js"></script>
+<script src="js/bitcore.js"></script>
+<script src="js/qrcode.min.js"></script>
+<script src="js/vw.js"></script>
 </body>
 </html>

@@ -1,0 +1,35 @@
+.qrcode {
+    align-content: center;
+    text-align: center;
+}
+
+
+#vw-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(206, 206, 208, 0.58);
+    z-index: 1001;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0.4)";
+    filter: alpha(opacity=40);
+    -moz-opacity: 0.4;
+    -khtml-opacity: 0.4;
+    opacity: 0.4;
+}
+
+#vw-loading {
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    padding: 16px;
+    width: 250px;
+    height: 250px;
+    z-index: 1002;
+    overflow: auto;
+    background-image: url(/img/busy.gif);
+    background-repeat: no-repeat
+}

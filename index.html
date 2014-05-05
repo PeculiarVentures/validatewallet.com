@@ -55,12 +55,7 @@
         </div>
 
         <p>
-            Verify outgoing bitcoin addresses or signed message:
-        </p>
-        <p>
-            if you want a verification for an address you spend bitcoins with.
-            With this simple site you can verify any bitcoin message.
-            Just provide the bitcoin address, message and generated signature.
+            A verification for an address you spend bitcoins with, just provide:
         </p>
 
         <div class="section-container tabs" data-section>
@@ -96,6 +91,16 @@
                                 <small class="error">Signature is required to be checked.</small>
                             </div>
                         </div>
+                        <p>
+                                or the message in a simple Bitcoin message signing format:
+                        </p>
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <label>Signed Message <small>Optional</small>
+                                    <textarea rows="3" id="vw-input-msg-pem" placeholder="-----BEGIN BITCOIN SIGNED MESSAGE----- ... "></textarea>
+                                </label>
+                            </div>
+                        </div>
                         <div>
                             <div id="vw-alert-success" class="alert-box success large-12 columns" style="display: none;"
                                  data-alert="">
@@ -112,6 +117,11 @@
                                 <span id="vw-badaddr">Error! Invalid Bitcoin Address.</span>
                                 <a class="close" href="#">×</a>
                             </div>
+                            <div id="vw-alert-badpem" class="alert-box warning large-12 columns" style="display: none;"
+                                 data-alert="">
+                                <span id="vw-badpem">Error! Invalid Bitcoin Signed Message format.</span>
+                                <a class="close" href="#">×</a>
+                            </div>
                         </div>
                         <div id="vw-alert">
                         </div>
@@ -120,11 +130,12 @@
                 </div>
             </section>
             <section>
-                <h5 class="title"><a name="#about-verifying">Verifying a Bitcoin Wallet Address</a></h5>
+                <h5 class="title">
+                    <a name="#about-verifying" href="http://unmitigatedrisk.com">Verifying a Bitcoin Wallet Address</a>
+                </h5>
                 <p>
-                    &ldquo;Before sending someone money on the internet via a irreversible transaction you better
-                    make sure you are sending the funds to the right address
-                    <a href="unmitigatedrisk.com">Read more ...</a>&rdquo;
+                    &ldquo;Before sending someone money on the internet
+                    via a irreversible transaction ... <a href="http://unmitigatedrisk.com">Read more ...</a>&rdquo;
                 </p>
             </section>
         </div>
@@ -174,10 +185,17 @@
 <script src="js/qrcode.min.js"></script>
 <script src="js/vw.js"></script>
 <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-50587244-1', 'validatewallet.com');
     ga('send', 'pageview');
 </script>

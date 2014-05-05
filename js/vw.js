@@ -137,6 +137,16 @@
     inMessagePem.value = m;
   }
 
+  function updatePEM () {
+    var addr, msg, sig;
+    sig = trim(inSignature.value);
+    msg = trim(inMessage.value);
+    addr = trim(inAddress.value);
+    if (sig && msg && addr) {
+        autofillPEM(addr,msg,sig);
+    }
+  }
+
 
   function makeQR(addr) {
     qrcode.clear();
@@ -169,7 +179,6 @@
         }
 
         if (succeeded) {
-          autofillPEM(addr,msg,sig);
           showAlert(alertSuccess);
         } else {
           showAlert(alertFalure);
@@ -215,6 +224,10 @@
     },
     false);
 
+
+  $('#vw-input-sign').on('change', updatePEM);
+  $('#vw-input-msg').on('change', updatePEM);
+
   $('#vw-input-msg-pem')
     .on('change', function () {
       var m, p, q, addr, sig, msg;
@@ -247,6 +260,7 @@
       oAddr = new bitcore.Address(addr);
       if (oAddr.isValid()) {
         makeQR(addr);
+        updatePEM();
       } else {
         showAlert(alertBadAddr);
       }

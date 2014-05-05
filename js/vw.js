@@ -202,21 +202,6 @@
       verifyMessage(addr, sig, msg);
     });
 
-  $('#vw-btn-verify-pem')
-    .on('click', function () {
-      var m, p, q, addr, sig, msg;
-      $('#vw-alert').empty();
-      m = inMessage.value;
-      p = splitSignedMessage(m);
-      if (p) {
-        msg = trim(p.message);
-        addr = trim(p.address);
-        sig = trim(p.signature);
-        verifyMessage(addr, sig, msg);
-      } else {
-        showAlert(alertFalure);
-      }
-    });
 
   window.addEventListener('load',
     function () {
